@@ -1,0 +1,17 @@
+Title: Create a repository from a sample dataset
+
+|| Step || Action || Pre-condition || Test data || Expected result || Passed ||
+| 1 | Open the repositories page | User is already authenticated in the QA environment | | Repositories page is visible | [ ] |
+| 2 | Select Create New Repository | Repositories page is visible | | Create repository dialog opens | [ ] |
+| 3 | Enter repository details | Create repository dialog is open | Repository name: "QA Sample Repository"; Description: "Created by the QA agent demo" | Create & Continue becomes enabled | [ ] |
+| 4 | Select Create & Continue | Required repository fields are filled | | Add Content to Repository dialog opens | [ ] |
+| 5 | Open Try a Sample and choose Fruit Detection | Add Content dialog is open | Sample dataset: Fruit Detection | Import begins | [ ] |
+| 6 | Wait for the import | Import is running | | Files imported successfully is shown | [ ] |
+
+Expected result:
+- The repository is created with a unique runtime name.
+- The Fruit Detection sample import reaches its success state.
+
+Notes:
+- The target URL is supplied through environment configuration.
+- Authentication state must be created locally and must never be committed.

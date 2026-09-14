@@ -1,0 +1,55 @@
+{
+  "id": "repository-create-guided",
+  "title": "Create repository and open add content dialog",
+  "flow_profile": "create-repository",
+  "requires_auth": true,
+  "start_url": null,
+  "preconditions": [
+    "Saved Playwright auth state exists",
+    "TARGET_URL points to the repositories page"
+  ],
+  "test_data": {
+    "repository_name": "QA Guided Repository",
+    "description": "Created by the guided QA agent"
+  },
+  "steps": [
+    {
+      "description": "Open the repositories page",
+      "expected_result": "Your Repositories page is visible"
+    },
+    {
+      "description": "Open repository creation from the available entry trigger",
+      "expected_result": "Create New Repository dialog opens"
+    },
+    {
+      "description": "Fill repository name and optional description",
+      "data_hints": [
+        "repository_name: QA Guided Repository",
+        "description: Created by the guided QA agent"
+      ],
+      "expected_result": "Create & Continue becomes enabled"
+    },
+    {
+      "description": "Create and continue",
+      "expected_result": "Add Content to Repository dialog appears"
+    },
+    {
+      "description": "Verify upload tab is available",
+      "expected_result": "Upload Files tab is visible"
+    }
+  ],
+  "expected_results": [
+    "Create New Repository dialog opens",
+    "Add Content to Repository dialog appears",
+    "Upload Files tab is visible"
+  ],
+  "tags": [
+    "repository",
+    "create",
+    "guided-flow:create-repository"
+  ],
+  "source_notes": [
+    "Application-specific guided example. Adapt Flow Profiles and authentication for the target product."
+  ],
+  "split_suggestions": []
+}

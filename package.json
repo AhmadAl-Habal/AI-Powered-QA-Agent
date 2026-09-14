@@ -1,0 +1,39 @@
+{
+  "name": "ai-powered-qa-automation-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first QA orchestration layer that turns structured QA intent and reusable UI flow profiles into Playwright execution plans.",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test --project=chromium",
+    "test:e2e": "playwright test --project=chromium",
+    "auth:setup": "playwright test tests/auth.setup.spec.ts --project=setup --headed",
+    "agent:run": "node src/run-agent.js",
+    "testcase:normalize": "node src/run-normalize-testcase.js",
+    "testcase:normalize:sample": "node src/run-normalize-testcase.js raw-testcases/example-confluence-testcase.txt",
+    "check:syntax": "node scripts/check-syntax.js",
+    "check:imports": "node scripts/check-imports.js",
+    "check:schema": "node scripts/validate-examples.js",
+    "check": "npm run check:syntax && npm run check:imports && npm run check:schema"
+  },
+  "keywords": [
+    "qa",
+    "test-automation",
+    "playwright",
+    "ollama",
+    "local-llm",
+    "ai-agent"
+  ],
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ollama": "^0.6.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}

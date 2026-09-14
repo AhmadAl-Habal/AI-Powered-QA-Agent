@@ -1,0 +1,3 @@
+Paste a raw manual QA test case here, then run:
+
+npm run testcase:normalize

@@ -1,0 +1,60 @@
+{
+  "id": "repository-create-sample-train-guided",
+  "title": "Create repository, import Fruit Detection sample, and start training",
+  "flow_profile": "repository-create-sample-train",
+  "requires_auth": true,
+  "start_url": null,
+  "preconditions": [
+    "Saved Playwright auth state exists",
+    "TARGET_URL points to the repositories page"
+  ],
+  "test_data": {
+    "repository_name": "QA Guided Repository",
+    "description": "Created by the guided QA agent",
+    "sample_dataset": "Fruit Detection",
+    "training_type": "Object Detection"
+  },
+  "steps": [
+    {
+      "description": "Create a new repository and open the add-content dialog",
+      "expected_result": "Add Content to Repository dialog appears"
+    },
+    {
+      "description": "Switch to Try a Sample and import Fruit Detection",
+      "expected_result": "Files imported successfully is shown"
+    },
+    {
+      "description": "Close the import dialog and open the created repository from the repositories list",
+      "expected_result": "The repository page opens for the exact generated repository name"
+    },
+    {
+      "description": "Validate imported sample content",
+      "expected_result": "The images folder is visible and Ready"
+    },
+    {
+      "description": "Start Object Detection model training after confirming the visible training settings",
+      "expected_result": "Build a Model changes to Models after training starts"
+    },
+    {
+      "description": "Validate the AI Models dropdown",
+      "expected_result": "AI Models shows a model named with the generated repository name followed by 01"
+    }
+  ],
+  "expected_results": [
+    "Fruit Detection sample imports successfully",
+    "The generated repository can be opened from the repositories list",
+    "The images folder status is Ready",
+    "Object Detection training starts",
+    "AI Models contains the generated repository model entry"
+  ],
+  "tags": [
+    "repository",
+    "sample-import",
+    "training",
+    "guided-flow:repository-create-sample-train"
+  ],
+  "source_notes": [
+    "Application-specific guided example. Adapt Flow Profiles and authentication for the target product."
+  ],
+  "split_suggestions": []
+}
