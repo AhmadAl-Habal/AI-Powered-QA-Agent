@@ -15,7 +15,7 @@ function collectJavaScriptFiles(directory) {
     if (entry.isDirectory()) {
       return collectJavaScriptFiles(fullPath);
     }
-    return entry.isFile() && /\.(?:js|ts)$/.test(entry.name) ? [fullPath] : [];
+    return entry.isFile() && entry.name.endsWith('.js') ? [fullPath] : [];
   });
 }
 
@@ -33,5 +33,5 @@ if (failures.length > 0) {
   console.error(failures.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`Syntax check passed for ${files.length} source files.`);
+  console.log(`Syntax check passed for ${files.length} JavaScript files.`);
 }

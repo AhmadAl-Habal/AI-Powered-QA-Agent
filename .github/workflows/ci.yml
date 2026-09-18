@@ -23,6 +23,9 @@ jobs:
       - name: Run syntax and schema checks
         run: npm run check
 
+      - name: Validate Playwright test discovery
+        run: npx playwright test --list
+
       # Full Playwright + Ollama execution is intentionally not run on a
       # GitHub-hosted runner. Add a configured self-hosted job when the target
       # QA environment, local models, browser auth, and test data are available.
